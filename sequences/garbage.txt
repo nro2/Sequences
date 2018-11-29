@@ -1,0 +1,6 @@
+CGCUAUUCUGGUGA [starting at 47]
+UAGCGAAAGUCAC [starting at 135]
+GAGACUCG [starting at 80]
+GCCACCC [starting at 23]
+UAGCUA [starting at 177]
+ACGGC [starting at 93]

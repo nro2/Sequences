@@ -1,0 +1,90 @@
+== Programming Assignment ==
+
+With this programming assignment we switch from C++ to Java. See the section
+below on compiling and running Java programs on the linux system.
+
+The objectives of this assignment are to learn how to develop Java programs,
+use basic Java collections, and perform simple Java file IO.
+
+You will write a Java program that compares several DNA strands and looks for
+common subsequences among the strands. Each DNA strand consists of a sequence
+of bases (A, G, C, U) and is represented as a line of characters in an input
+file. For example, this would represent four DNA strands:
+
+GAGUACUCGGAUG
+UUAUACUCGUCUG
+UCUUACUCGGAUG
+GAGCACUCGCCUG
+
+A common subsequence is a sequence of characters where the same sequence of
+characters appears at the same location in the strands. With the above
+example, a common subsequence is "ACUCG" and starts at the 5th position in the
+string. We will only consider common subsequences that are at least 3
+characters longs. That is, we wouldn't count the "UG" common subsequence at
+the very end of the strands.
+
+In order to qualify as a common subsequence the same sequences of characters
+must appear in the same position in all of the DNA strands. Even though "GAG"
+appears in the first position for both the first and fourth strands, since it
+doesn't also appear in the other strands, it is not a common subsequence.
+
+Your program will need to find all of the subsequences and then print them out
+in order from longest to shortest. See the output.txt file for the exact
+format and values. In order to do the longest-to-shortest sorting you will
+need to use the Comparable interface in Java.
+
+This assignment includes several data files containing DNA strands. All of the
+data files, except for verysmall.txt, have the same subsequences in their DNA
+strands so the results from your program will be the same on all of the files
+(exactly what is in output.txt).
+
+== Compiling and Running Java Programs ==
+
+Compiling and running Java programs on the linux system isn't too
+difficult. It depends on two commands: javac and java. The javac command is
+used to complile *.java files into *.class files. The java command is used to
+run the JVM on a given class file.
+
+Both the javac and java commands are located in /usr/jdk/bin on the PCC linux
+system. For convenience I recommend that you add that directory to your
+PATH. If you don't do this then you will need to type the full path to the
+command each time. The examples below assume that you have set up your PATH.
+
+For example, if you have a file Main.java that contains a Java class called
+Main you would compile that with this command:
+
+javac Main.java
+
+The result will be a new file in the current directory called Main.class. In
+order to run this Java program you would use the following command:
+
+java Main
+
+Notice that you don't type "Main.class".  
+
+It is possible to compile multiple Java files at once by passing all of the
+files to the javac command:
+
+javac *.java
+
+This will result in a new class file for each Java source file. Even though
+there are multiple class files, you run the Java program with just one. You
+run the java command on the Java class that contains the main method.
+
+== External Requirements ==
+
+- Write a program to read in any of the provided data files by specifying the
+  filename as a command line argument.
+- Compare each line of DNA in the files and find all of the common
+  subsequences.
+- Output all of the common subsequences sorted by length, longest to shortest.
+- The output line for each sequence must show the sequence and the starting
+  point of that sequence using the format from output.txt.
+
+== Internal Requirements ==
+
+- The program must compile using the javac compiler on the PCC Linux system.
+- The program must not crash.
+- The program must not hang in an infinite loop.
+- When run on the verylarge.txt file (100000 entries), the program must run in
+  less than 5 seconds on the PCC linux system.
